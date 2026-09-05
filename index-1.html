@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reuni Akbar Alumni Al Fatah Masamba</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;background:#fff5f7;color:#743b50}
+.hero{min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px 18px;background:radial-gradient(circle at top,#fff 0,#ffe9f0 45%,#f7ccd9 100%);position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"✿";position:absolute;font-size:180px;color:#eab1c4;opacity:.25}.hero:before{left:-50px;top:20px}.hero:after{right:-50px;bottom:20px}
+.card{max-width:850px;padding:45px 25px;border:1px solid #d9a0b5;border-radius:28px;background:rgba(255,255,255,.72);box-shadow:0 20px 60px rgba(130,70,90,.15)}
+.small{letter-spacing:4px;text-transform:uppercase;font-size:13px}.script{font-style:italic;font-size:42px;margin:15px 0}.title{font-size:clamp(38px,8vw,76px);margin:0;line-height:1.05}.subtitle{font-size:18px;letter-spacing:2px;margin:20px 0 30px}.date{font-size:23px}
+.invited{margin:25px auto 0;padding:18px 24px;max-width:560px;border-top:1px solid #d9a0b5;border-bottom:1px solid #d9a0b5}.invited .label{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-family:Arial,sans-serif}.invited .name{font-size:30px;font-weight:bold;margin-top:7px}
+.btn{display:inline-block;margin-top:28px;padding:14px 26px;border-radius:30px;background:#a94f70;color:white;text-decoration:none;font-family:Arial,sans-serif}
+section{padding:65px 20px;max-width:1000px;margin:auto;text-align:center}h2{font-size:36px;margin:0 0 25px}.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:700px;margin:auto}.box{padding:25px;border:1px solid #e4b8c7;border-radius:20px;background:#fff}.num{font-size:36px;font-weight:bold}.label2{font-family:Arial,sans-serif;font-size:12px;text-transform:uppercase}.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}.icon{font-size:34px}.quote{font-size:23px;font-style:italic;line-height:1.7}.footer{padding:40px;text-align:center;background:#743b50;color:white}
+@media(max-width:600px){.count{grid-template-columns:repeat(2,1fr)}.card{padding:35px 15px}.script{font-size:32px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="card">
+<div class="small">Undangan</div><div class="script">Reuni Akbar</div>
+<h1 class="title">ALUMNI AL FATAH MASAMBA</h1>
+<div class="subtitle">PONDOK PESANTREN AL FATAH MASAMBA · CABANG TEMBORO</div>
+<div class="date">13 September 2026 · 08.00 AM WITA</div>
+<div class="invited"><div class="label">Kepada Yth.</div><div class="name" id="guestName">Bapak/Ibu/Saudara/i</div></div>
+<a class="btn" href="#countdown">Lihat Undangan ↓</a>
+</div></header>
+
+<section id="countdown">
+<h2>🌸 Hari Menuju Reuni 🌸</h2>
+<div style="font-size:clamp(42px,10vw,78px);font-weight:bold;line-height:1.05" id="daysLeft">8 HARI</div>
+<p style="font-style:italic;font-size:18px">Menuju hari kita bertemu kembali di Al Fatah ✨</p>
+</section>
+
+<section id="detail">
+<h2>Detail Acara</h2>
+<div class="details">
+<div class="box"><div class="icon">📅</div><h3>Tanggal</h3><p>13 September 2026<br>Minggu</p></div>
+<div class="box"><div class="icon">⏰</div><h3>Waktu</h3><p>08.00 AM<br>WITA</p></div>
+<div class="box"><div class="icon">📍</div><h3>Lokasi</h3><p>Pondok Putri Pakkali<br>Masamba</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pondok+Putri+Pakkali+Masamba" target="_blank">Buka Maps</a></div>
+</div>
+</section>
+
+<section><h2>Untuk Kita yang Pernah Bersama</h2>
+<p class="quote">“Kita pernah menjadi bagian dari cerita yang sama. Kini saatnya kembali, bertemu, berbagi cerita, mengenang masa indah, dan mempererat silaturahmi.”</p>
+</section>
+
+<section><h2>Konfirmasi Kehadiran</h2>
+<p>Silakan konfirmasi kepada panitia agar data peserta dapat dipersiapkan.</p>
+<a class="btn" href="#" onclick="alert('Link WhatsApp panitia bisa ditambahkan nanti.');return false;">Konfirmasi Kehadiran</a>
+</section>
+
+<div class="footer">Al Fatah — Rumah Kedua, Kenangan Terindah ✨</div>
+
+<script>
+const target=new Date("2026-09-13T08:00:00+08:00").getTime();
+function updateDays(){const x=target-Date.now();const d=Math.max(0,Math.ceil(x/86400000));document.getElementById("daysLeft").textContent=d===0?"HARI INI":d+" HARI";}
+updateDays();setInterval(updateDays,60000);
+const params=new URLSearchParams(location.search);const guest=params.get("to");if(guest)document.getElementById("guestName").textContent=guest;
+</script>
+</body>
+</html>
